@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const configureRoutes = require('./config/routes');
+const configureRoutes = require('./config/login-register-routes');
 
 const server = express();
 
