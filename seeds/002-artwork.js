@@ -1,13 +1,13 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('artwork').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('artwork').insert([
+        {id: 1, images: 'mr-tt-xb0wLfZH9Zo-unsplash.jpg', artistID: 1},
+        {id: 2, images: 'alexander-schimmeck-ineC_oi7NHs-unsplash.jpg', artistID: 2},
+        {id: 3, images: 'pavel-nekoranec-8ALBNshSZTE-unsplash.jpg', artistID: 3}
       ]);
     });
 };
