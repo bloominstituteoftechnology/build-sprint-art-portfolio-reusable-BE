@@ -5,6 +5,7 @@ exports.up = function(knex) {
       artwork.string('images')
       .notNullable();
       artwork.integer('artistID').notNullable();
+      artwork.string('caption', 255)
   })
 };
 

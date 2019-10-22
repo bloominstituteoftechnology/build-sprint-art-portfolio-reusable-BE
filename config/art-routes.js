@@ -1,32 +1,53 @@
-const route = require('express').Route();
-const db = require('../data/helpers/art-route-helper');
-route.get('/art', restricted, (req,res) => {
-    db.find()
+const axios = require('axios');
+const router = require('express').Router();
+const Work = require('../data/helpers/art-route-helper')
+
+router.get('/', (req,res) => {
+    Work.find()
     .then(data => {
         res.status(200).json(data);
     })
     .catch(err => {
-        console.log(err)
-    });
+        res.send(err)
+    })
 });
 
-route.post('/art/create', restricted, (req, res) => {
-    const project = req.body;
-    db.add(project).then(data => {
-        res.status(200).json({
-            message: 'Posted',
+router.get('/:id', (req,res) =>{
+    const id = req.params.id;
+    Work.findById(id)
+    .then(data => {
+        res.status(200).json(data);
+    })
+    .catch(err => {
+        res.send(err)
+    })
+})
+
+router.put('/:id', (req,res) => {
+    const art = req.params.id;
+    Work.update(art, req.body)
+    .then(data => {
+        res.send(201).json({
+            message: "Update Successful",
             New_Data: data
         })
     })
     .catch(err => {
-        console.log(err);
-    });
-});
-
-route.put('/art/update', restricted, (req, res) => {
-    
+        console.log(err)
+    })
 })
 
-route.remove('/art/delete', restricted, (req, res) =>{
-
+router.post('/add', (req,res) => {
+    const art = req.body;
+    Work.add(art)
+    .then(data => {
+        res.status(201).json(data);
+    })
+    .catch(err => {
+        res.status(500).json({message: "FAIL",
+        Error: err})
+    })
 })
+module.exports = router;
+
+
