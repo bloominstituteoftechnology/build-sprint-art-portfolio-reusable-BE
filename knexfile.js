@@ -10,13 +10,6 @@ module.exports = {
     useNullAsDefault: true,
   },
 
-  staging: {
-    client: 'sqlite3',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
     pool: {
       min: 2,
       max: 10
@@ -24,8 +17,8 @@ module.exports = {
     migrations: {
       directory: '/data/migrations',
       tableName: 'art'
-    }
-  },
+    },
+  
 
   production: {
     client: 'postgresql',

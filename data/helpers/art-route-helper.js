@@ -36,3 +36,4 @@ function update(id, changes){
     });
 }
 
+module.exports = router;

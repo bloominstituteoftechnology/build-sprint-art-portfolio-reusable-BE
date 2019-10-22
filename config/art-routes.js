@@ -1,32 +1,17 @@
-const route = require('express').Route();
-const db = require('../data/helpers/art-route-helper');
-route.get('/art', restricted, (req,res) => {
-    db.find()
-    .then(data => {
-        res.status(200).json(data);
+const axios = require('axios');
+const router = require('express').Router();
+
+router.get('/', (req,res) => {
+    const requestOptions = {
+        headers: {accept: 'application/json'},
+    };
+    axios
+    .get('https://api.unsplash.com/', requestOptions)
+    .then(response => {
+        res.status(200).json(response.data.results);
     })
     .catch(err => {
-        console.log(err)
+        res.status(500).json({message: 'Error getting images', Error: err});
     });
 });
-
-route.post('/art/create', restricted, (req, res) => {
-    const project = req.body;
-    db.add(project).then(data => {
-        res.status(200).json({
-            message: 'Posted',
-            New_Data: data
-        })
-    })
-    .catch(err => {
-        console.log(err);
-    });
-});
-
-route.put('/art/update', restricted, (req, res) => {
-    
-})
-
-route.remove('/art/delete', restricted, (req, res) =>{
-
-})
+module.exports = router;

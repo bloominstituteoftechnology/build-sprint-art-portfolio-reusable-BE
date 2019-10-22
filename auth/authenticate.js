@@ -21,3 +21,5 @@ module.exports = (req, res, next) => {
         });
     }
 };
+
+module.exports = router;

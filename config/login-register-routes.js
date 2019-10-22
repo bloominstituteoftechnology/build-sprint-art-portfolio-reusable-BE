@@ -1,9 +1,11 @@
-const route = require('express').Router();
+const router = require('express').Router();
 const  bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const Users = require('../data/helpers/login-route-helper');
 const secret = require('./secrets');
-route.post('/login', (req, res) => {
+
+
+router.post('/login', (req, res) => {
     let {username, password} = req.body;
     Users.findBy({username})
     .first()
@@ -24,7 +26,7 @@ route.post('/login', (req, res) => {
     });
 });
 
-route.post('/register', (req, res) => {
+router.post('/register', (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 6);
     user.password = hash;
@@ -32,7 +34,7 @@ route.post('/register', (req, res) => {
     Users.add(user)
     .then(saved => {
         res.status(201).json({
-            message: 'Added'
+            message: saved
         });
     })
     .catch(err => {
