@@ -35,6 +35,8 @@
     "cross-env": "^6.0.3",
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
+  },
+  "engines": {
+    "node": "10"
   }
-  
 }
