@@ -8,33 +8,13 @@ module.exports = {
       filename: './art.db3'
     },
     useNullAsDefault: true,
+    mifrations:{
+      directory: './migrations',
+      tableName: 'dbmigrations'
+    },
+    seeds: {
+      directory: './seeds'
+    },
   },
-
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      directory: '/data/migrations',
-      tableName: 'art'
-    },
-  
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      directory: '/data/migrations',
-      tableName: 'art'
-    }
-  }
 
 };

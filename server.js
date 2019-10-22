@@ -18,4 +18,4 @@ server.get('/', (req, res) => {
 })
 
 
-module.exports = router;
+module.exports = server;
