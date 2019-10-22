@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const authRoutes = require('./config/login-register-routes')
 const authenticate = require('./auth/authenticate')
-const artRoutes = require('./config/art-routes').default;
+const artRoutes = require('./config/art-routes');
 const server = express();
 
 server.use(helmet());
