@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function find(){
-    return db('artwork').select('id', 'images', 'artistID');
+    return db('artwork').select('id', 'images', 'artistID', 'caption');
 }
 
 function findBy(filter){
@@ -36,4 +36,3 @@ function update(id, changes){
     });
 }
 
-module.exports = router;

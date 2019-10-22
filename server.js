@@ -9,8 +9,8 @@ const server = express();
 server.use(helmet());
 server.use(cors());
 server.use(express.json());
-server.use('/auth', authenticate, authRoutes );
-server.use('/art', artRoutes);
+server.use('/auth',  authRoutes );
+server.use('/art', authenticate, artRoutes);
 
 
 server.get('/', (req, res) => {
