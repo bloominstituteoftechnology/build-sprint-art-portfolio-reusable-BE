@@ -1,12 +1,12 @@
 require('dotenv').config();
-const dbENV = process.env.DB_ENV || 'development';
-const config = require('./data/dbConfig')[dbENV]
-const port = process.env.PORT || 3200;
+
 const server = require('./server');
 
+const port = process.env.PORT || 3200;
 
-
-server.listen(config.server);
+server.listen(port, () => {
+    console.log(`It's working`);
+});
 
 
 
