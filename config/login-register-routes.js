@@ -2,7 +2,7 @@ const router = require('express').Router();
 const  bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const secret = require('./secrets');
+
 
 
 const login = async (req, res) => {
@@ -67,7 +67,7 @@ const login = async (req, res) => {
   }
   
   // routes
-  router.post('/', login)
+  router.post('/login', login)
 
 const signup = async (req, res) => {
     if (!req.body.fname)
@@ -148,6 +148,6 @@ const signup = async (req, res) => {
   }
   
   // routes
-  router.post('/', startCaseName, signup)
+  router.post('/signup', startCaseName, signup)
   
 module.exports = router;

@@ -1,7 +1,9 @@
 const axios = require('axios');
 const router = require('express').Router();
 const Work = require('../data/helpers/art-route-helper')
-
+const express = require('express')
+const jwt = require('jsonwebtoken')
+const secret = require('./secrets');
 router.get('/', (req,res) => {
     Work.find()
     .then(data => {
