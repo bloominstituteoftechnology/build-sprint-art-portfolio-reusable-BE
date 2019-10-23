@@ -8,7 +8,7 @@ module.exports = {
       filename: './art.db3'
     },
     useNullAsDefault: true,
-    mifrations:{
+    migrations:{
       directory: './migrations',
       tableName: 'dbmigrations'
     },
@@ -22,7 +22,7 @@ module.exports = {
       filename: './art.db3'
     },
     useNullAsDefault: true,
-    mifrations:{
+    migrations:{
       directory: './migrations',
       tableName: 'dbmigrations'
     },
@@ -35,7 +35,7 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     
-    mifrations:{
+    migrations:{
       directory: './migrations',
       tableName: 'dbmigrations'
     },
