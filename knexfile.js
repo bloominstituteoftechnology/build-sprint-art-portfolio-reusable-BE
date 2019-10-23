@@ -7,6 +7,7 @@ module.exports = {
     connection: {
       filename: './art.db3'
     },
+    debug: true,
     useNullAsDefault: true,
     migrations:{
       directory: './migrations',
@@ -21,6 +22,7 @@ module.exports = {
     connection: {
       filename: './art.db3'
     },
+    debug: true,
     useNullAsDefault: true,
     migrations:{
       directory: './migrations',
@@ -34,7 +36,7 @@ module.exports = {
   production: {
     client: 'pg',
     connection: process.env.DATABASE_URL,
-    
+    debug: true,
     migrations:{
       directory: './migrations',
       tableName: 'dbmigrations'
@@ -42,7 +44,7 @@ module.exports = {
     seeds: {
       directory: './seeds'
     },
-    debug: true
+    
   }
 }
  
