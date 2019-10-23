@@ -8,7 +8,7 @@ module.exports = {
 };
 
 function find(){
-    return db('users').select('id', 'username');
+    return db('users').select('id', 'username', 'password');
 }
 
 function findBy(filter){
@@ -16,9 +16,10 @@ function findBy(filter){
 }
 
 async function add(user){
-    const [id] = await db('users').insert(user, 'id')
-    .returning('id')
-    return findById(id);
+    const [id] = await db('users').insert(user)
+    .returning('id');
+    const newUser = await findById(id);
+    return newUser;
 }
 
 function findById(id){
