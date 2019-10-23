@@ -18,7 +18,8 @@ function findBy(filter){
 }
 
 async function add(images){
-    const [id] = await db('artwork').insert(images);
+    const [id] = await db('artwork').insert(images)
+    .returning('id')
     return findById(id);
 }
 
