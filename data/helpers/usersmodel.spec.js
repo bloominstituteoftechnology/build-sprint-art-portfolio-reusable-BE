@@ -1,7 +1,7 @@
 const Users = require('./login-route-helper');
 const db = require('../dbConfig');
 it ('should set a testing environment', () => {
-    expect(process.env.DB_ENV).toBe('testing');
+    expect(process.env.NODE_ENV).toBe('test');
 });
 
 describe('user model', () => {

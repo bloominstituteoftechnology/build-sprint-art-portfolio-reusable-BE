@@ -10,9 +10,9 @@ describe('GET', () => {
             .toBe(200)
         });
     });
-    test('should return json', async () =>{
+    test('should return text', async () =>{
         const response = await request(server).get('/');
 
-        expect(response.type).toMatch(/json/i);
+        expect(response.type).toMatch('text/html');
     });
 })
