@@ -7,7 +7,7 @@ exports.up = function(knex) {
       .string('username', 32)
       .notNullable()
       .unique();
-      users.string('password', 270000000).notNullable();
+      users.string('password', 17000).notNullable();
   });
 };
 
