@@ -1,82 +1,72 @@
-##BackEnd Art Portfolio##
+# BackEnd Art Portfolio
 
-*Art Portfolio Back End*
-
-**This is the endpoints and notes for the backend portion of the Art Portfolio.**
+This is the endpoints and notes for the backend portion of the Art Portfolio.
 
 
-##PUT /art/:id
-https://art-po-bw.herokuapp.com/art/:id
-Edit the caption of the artwork selected
+# PUT /art/:id
 
-*HEADERS*
-Authorization : token
-Content-Type : application/json
-PARAMS
-PATH VARIABLES
-id1
-**BODY raw**
-{
-	"caption": "Beauty"
-}
+  - https://art-po-bw.herokuapp.com/art/:id 
+  - Edit the caption of the artwork selected
 
 
+HEADERS :
+  - Authorization : token
+  - Content-Type : application/json
 
-/art/:id
-**GET /art/:id**
-https://art-po-bw.herokuapp.com/art/:id
-To retrieve a specific piece of art. The id in the parameter is the art's id. NOT the artists id.
+PARAMS :
+    -Path Variables ex: id = 1
 
-##HEADERS
-Authorization : token
-Content-Type : application/json
-PARAMS
-PATH VARIABLES
-id2
+BODY : 
+    -raw : 
+        -{ "caption": "Beauty" }
 
 
+# GET /art/:id
 
-/art
-*GET /art*
-https://art-po-bw.herokuapp.com/art
-To retrieve art AFTER signing in. If you are not signed in and provide a token, you will not enter.
+    - https://art-po-bw.herokuapp.com/art/:id 
+    - To retrieve a specific piece of art. The id in the parameter is the art's id. NOT the artists id.
+    
+HEADERS :
+    -Authorization : token 
+    -Content-Type : application/json
 
-**HEADERS**
-Content-Type : application/json
-Authorization : token
-##BODY raw
-{
+PARAMS :
+    -Path Variables ex: id = 1
 
-"username": "kevin",
-"password": "hajflas"
-}
+# GET /art
+
+    -https://art-po-bw.herokuapp.com/art 
+    -To retrieve art AFTER signing in. If you are not signed in and provide a token, you will not enter.
+    
+HEADERS :
+    -Authorization : token 
+    -Content-Type : application/json
+
+# POST /auth/login
+
+    -https://art-po-bw.herokuapp.com/auth/login
+    -Here you will login with previously created username and password. You need to retrieve the token and use it to view the rest of the site.
+    
+HEADERS :
+    - Content-Type : application/json 
+
+BODY : 
+    -RAW :
+        -{
+
+"username": "kevin", "password": "hajflas" }
 
 
+# POST auth/register
 
-##POST /auth/login
-https://art-po-bw.herokuapp.com/auth/login
-Here you will login with previously created username and password. You need to retrieve the token and use it to view the rest of the site.
+    -https://art-po-bw.herokuapp.com/auth/register
+    -Used to create a new user. Needs a username and password only.
 
-*HEADERS*
-Content-Type : application/json
-*BODY raw*
-{
+HEADERS : 
+    - Authorization Content-Type : application/json
+    
+BODY :
+    -RAW :
+        -{ "username": "Arya22", "password": "1234" }
 
-"username": "kevin",
-"password": "hajflas"
-}
-
-
-
-**POST auth/register**
-https://art-po-bw.herokuapp.com/auth/register
-Used to create a new user. Needs a username and password only.
-
-##HEADERS
-Authorization
-Content-Type : application/json
-**BODY raw**
-{
-	"username": "Arya22",
-	"password": "1234"
-}
+## MADE BY ISLA MCNEILL
