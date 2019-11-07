@@ -2,10 +2,12 @@
 
 This is the endpoints and notes for the backend portion of the Art Portfolio.
 
+Deployed API: https://bw-art-portfolio.herokuapp.com/
+
 
 # PUT /art/:id
 
-  - https://art-po-bw.herokuapp.com/art/:id 
+  - https://bw-art-portfolio.herokuapp.com//art/:id 
   - Edit the caption of the artwork selected
 
 
@@ -23,7 +25,7 @@ BODY :
 
 # GET /art/:id
 
-    - https://art-po-bw.herokuapp.com/art/:id 
+    - https://bw-art-portfolio.herokuapp.com//art/:id 
     - To retrieve a specific piece of art. The id in the parameter is the art's id. NOT the artists id.
     
 HEADERS :
@@ -35,7 +37,7 @@ PARAMS :
 
 # GET /art
 
-    -https://art-po-bw.herokuapp.com/art 
+    -https://bw-art-portfolio.herokuapp.com//art 
     -To retrieve art AFTER signing in. If you are not signed in and provide a token, you will not enter.
     
 HEADERS :
@@ -44,7 +46,7 @@ HEADERS :
 
 # POST /auth/login
 
-    -https://art-po-bw.herokuapp.com/auth/login
+    -https://bw-art-portfolio.herokuapp.com//auth/login
     -Here you will login with previously created username and password. You need to retrieve the token and use it to view the rest of the site.
     
 HEADERS :
@@ -59,7 +61,7 @@ BODY :
 
 # POST auth/register
 
-    -https://art-po-bw.herokuapp.com/auth/register
+    -https://bw-art-portfolio.herokuapp.com//auth/register
     -Used to create a new user. Needs a username and password only.
 
 HEADERS : 
